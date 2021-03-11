@@ -49,10 +49,13 @@ document.addEventListener('DOMContentLoaded', () => {
   const modal = () => {
     const cardDetailsButtonBuyElem = document.querySelector('.card-details__button_buy');
     const modalElem = document.querySelector('.modal');
+    const modalSubtitle = document.querySelector('.modal__subtitle');
 
     cardDetailsButtonBuyElem.addEventListener('click', () => {
-      modalElem.classList.add('open');
+      let textButton = cardDetailsButtonBuyElem.textContent;
+      modalSubtitle.textContent = textButton;
 
+      modalElem.classList.add('open');
       addEventListener('keydown', (event) => {
         if(event.key === 'Escape') {
           modalElem.classList.remove('open');
